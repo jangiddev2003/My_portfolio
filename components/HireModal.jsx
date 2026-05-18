@@ -32,14 +32,16 @@ export default function HireModal() {
     if (!name || !email || !msg) { alert('Please fill in all fields.'); return; }
 
     try {
-      const emailjs = (await import('@emailjs/browser')).default;
-      emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
-      await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        from_name:  name,
-        from_email: email,
-        message:    msg,
-        to_email:   'jangiddev2003@gmail.com',
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message: msg }),
       });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       setSuccess(true);
       setTimeout(() => setOpen(false), 2500);
     } catch {
