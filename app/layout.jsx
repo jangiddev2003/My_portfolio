@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Frontend developer and BCA student building modern, performant web experiences with clean code and interactive UI. Based in Maharashtra, India.',
   keywords: 'Dev Jangid, frontend developer, React, Next.js, JavaScript, portfolio, Maharashtra',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/portfolio-logo.ico',
   },
   openGraph: {
     title: 'Dev Jangid — Frontend Developer',
