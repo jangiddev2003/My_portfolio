@@ -33,9 +33,6 @@ import Effects from '../components/Effects';
 // Main page that assembles all portfolio sections
 export default function Home() {
   return (
-    {/* ============================================ */}
-    {/* PAGE CONTAINER */}
-    {/* ============================================ */}
     <>
       {/* ============================================ */}
       {/* CUSTOM CURSOR */}

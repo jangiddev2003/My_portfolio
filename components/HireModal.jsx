@@ -147,7 +147,6 @@ export default function HireModal() {
 
         {/* Show success message OR form */}
         {success ? (
-          {/* SUCCESS MESSAGE */}
           <div style={{ textAlign: 'center', padding: '2rem 0' }}>
             {/* Success icon */}
             <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>✅</div>
@@ -157,14 +156,12 @@ export default function HireModal() {
             </p>
           </div>
         ) : (
-          {/* FORM SECTION */}
           <>
             {/* Form fields: Name and Email */}
             {[
               { id: 'hm-name',  label: 'Name',    type: 'text',  ref: nameRef,  placeholder: 'Your name' },
               { id: 'hm-email', label: 'Email',   type: 'email', ref: emailRef, placeholder: 'your@email.com' },
             ].map(({ id, label, type, ref, placeholder }) => (
-              {/* Form field group */}
               <div key={id} style={{ marginBottom: '1rem' }}>
                 <label htmlFor={id} style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text2)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
                   {label}

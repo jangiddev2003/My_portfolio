@@ -135,7 +135,6 @@ export default function Skills() {
       <div className="skills-matrix-grid">
         {/* Map each category to a card */}
         {skillCategories.map(({ title, accent, tags }) => (
-          {/* Skill category card with accent color */}
           <article key={title} className="skills-category reveal visible" style={{ '--accent': accent }}>
             {/* Category title */}
             <h3 className="skills-category-title">{title}</h3>

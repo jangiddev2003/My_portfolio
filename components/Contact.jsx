@@ -54,7 +54,6 @@ export default function Contact() {
       <div className="contact-grid">
         {/* LEFT COLUMN: Contact info and links */}
         <div>
-          {/* Introductory text */}
           <div className="contact-text">
             <p>I&apos;m currently open to new opportunities. Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open!</p>
           </div>

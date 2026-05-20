@@ -50,7 +50,6 @@ export default function Projects() {
       {/* SECTION HEADER */}
       {/* ============================================ */}
       <div className="section-header reveal">
-        {/* Section number */}
         <span className="section-num">03.</span>
         <h2 className="section-title">Projects</h2>
         <div className="section-line" />
@@ -70,7 +69,6 @@ export default function Projects() {
             const [thumbFrom, thumbTo] = thumbGradients[index % thumbGradients.length];
 
             return (
-              {/* Project card with 3D tilt effect */}
               <article
                 key={cardKey}
                 className="project-card reveal"
