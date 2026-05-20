@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500&family=Share+Tech+Mono&display=swap');
 
+/* ============================================
+   DESIGN SYSTEM & COLOR PALETTE
+   ============================================
+   This section defines all the CSS custom properties (variables)
+   used throughout the entire portfolio. The color scheme uses:
+   - Dark backgrounds (black/dark gray)
+   - White text for contrast
+   - Muted purple (#596aa1) as the primary accent color
+   ============================================ */
 :root {
   --bg: #0f0f0f;
   --bg2: #1a1a1a;
@@ -22,6 +31,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+/* ============================================
+   GLOBAL STYLES
+   ============================================
+   - Smooth scrolling for better UX
+   - Dark background with white text
+   - Custom font stack with professional typefaces
+   ============================================ */
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
@@ -32,10 +48,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Customize scrollbar appearance for brand consistency */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
 
+/* Add subtle noise texture to background for depth */
 body::before {
   content: '';
   position: fixed;
@@ -46,7 +64,15 @@ body::before {
   opacity: 0.4;
 }
 
-/* NAV */
+/* ============================================
+   NAVIGATION BAR
+   ============================================
+   Fixed header with:
+   - Semi-transparent blur backdrop
+   - Logo with accent color
+   - Navigation links with hover underline effect
+   - Call-to-action button (styled with purple and black border)
+   ============================================ */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -80,6 +106,7 @@ nav {
   transition: color 0.2s;
   position: relative;
 }
+/* Animated underline effect on hover */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -90,6 +117,7 @@ nav {
 }
 .nav-links a:hover { color: var(--cyan); }
 .nav-links a:hover::after { width: 100%; }
+/* CTA Button with purple background and black border */
 .nav-cta {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -105,9 +133,19 @@ nav {
   overflow: hidden;
   font-weight: 600;
 }
-.nav-cta:hover { background: #1e40af; color: #ffffff; transform: translateY(-2px); }
+.nav-cta:hover { background: #3d4d6b; color: #ffffff; transform: translateY(-2px); }
 
-/* HERO */
+/* ============================================
+   HERO SECTION - Main Landing Area
+   ============================================
+   Full viewport height section with:
+   - Gradient background
+   - Grid and glow effects for depth
+   - Large animated title with accent color
+   - Call-to-action buttons
+   - Scroll indicator with glitter effects
+   - Social media links
+   ============================================ */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -261,6 +299,13 @@ nav {
   font-weight: 500;
 }
 .hero-socials a:hover { color: var(--cyan); }
+/* ============================================
+   SCROLL INDICATOR - Call user to scroll down
+   ============================================
+   - Glittering scroll line with glow effects
+   - Animated sparkle particles on sides
+   - Creates eye-catching attention to scroll
+   ============================================ */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -280,6 +325,7 @@ nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
+/* Glowing scroll line with multiple shadow layers */
 .scroll-line {
   width: 1px; height: 40px;
   background: linear-gradient(to bottom, var(--cyan), transparent);
@@ -287,6 +333,7 @@ nav {
   box-shadow: 0 0 10px rgba(89,106,161,0.6), 0 0 20px rgba(89,106,161,0.3), inset 0 0 8px rgba(89,106,161,0.5);
   filter: drop-shadow(0 0 3px rgba(89,106,161,0.8));
 }
+/* Sparkle effects on sides of scroll indicator */
 .scroll-indicator::before,
 .scroll-indicator::after {
   content: '';
@@ -308,7 +355,13 @@ nav {
   animation-delay: 0.4s;
 }
 
-/* SECTIONS */
+/* ============================================
+   SECTIONS - Content Containers
+   ============================================
+   Shared styling for all main sections:
+   - About, Skills, Projects, Education, Contact
+   - Consistent spacing and header styling
+   ============================================ */
 section { padding: 6rem 4rem; position: relative; }
 .section-header {
   display: flex;
@@ -316,6 +369,7 @@ section { padding: 6rem 4rem; position: relative; }
   gap: 1rem;
   margin-bottom: 3.5rem;
 }
+/* Section numbering */
 .section-num {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -323,6 +377,7 @@ section { padding: 6rem 4rem; position: relative; }
   letter-spacing: 0.1em;
   font-weight: 600;
 }
+/* Section titles with accent color */
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -330,13 +385,21 @@ section { padding: 6rem 4rem; position: relative; }
   letter-spacing: -0.02em;
   color: #ffffff;
 }
+/* Decorative line after section title */
 .section-line {
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, var(--border2), transparent);
 }
 
-/* ABOUT */
+/* ============================================
+   ABOUT SECTION - Personal Introduction
+   ============================================
+   Two-column layout with:
+   - Text content about the person
+   - Statistics cards with hover effects
+   - Contact information display
+   ============================================ */
 #about { background: var(--bg2); }
 .about-grid {
   display: grid;
@@ -416,7 +479,15 @@ section { padding: 6rem 4rem; position: relative; }
 .info-val a { color: var(--cyan); text-decoration: none; font-weight: 500; }
 .info-val a:hover { text-decoration: underline; }
 
-/* SKILLS */
+/* ============================================
+   SKILLS SECTION - Technical Expertise
+   ============================================
+   Features:
+   - Animated orbs for visual interest
+   - Skill pills with shimmer hover effect
+   - Category grouping (Frontend, Backend, etc)
+   - Statistics bar at bottom
+   ============================================ */
 .skills-matrix-section {
   background: #0a0a0a;
   position: relative;
@@ -606,7 +677,15 @@ section { padding: 6rem 4rem; position: relative; }
   .skills-stat-item:last-child { border-bottom: none; }
 }
 
-/* PROJECTS */
+/* ============================================
+   PROJECTS SECTION - Portfolio Showcase
+   ============================================
+   Features:
+   - Horizontal scrolling marquee of project cards
+   - Hover effects with blur and scale
+   - Gradient overlays on project thumbnails
+   - Smooth animations and transitions
+   ============================================ */
 #projects {
   background: var(--bg2);
   position: relative;
@@ -794,7 +873,14 @@ section { padding: 6rem 4rem; position: relative; }
   to { transform: translate3d(-50%, 0, 0); }
 }
 
-/* EDUCATION */
+/* ============================================
+   EDUCATION SECTION - Academic Background
+   ============================================
+   Features:
+   - Education cards with school/degree info
+   - Pulsing indicator for active/current studies
+   - Icon and timeline styling
+   ============================================ */
 .edu-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
@@ -853,7 +939,14 @@ section { padding: 6rem 4rem; position: relative; }
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* CONTACT */
+/* ============================================
+   CONTACT SECTION - Get In Touch
+   ============================================
+   Two-column layout with:
+   - Contact information cards (email, phone, etc)
+   - Email contact form with styled inputs
+   - Submit button with hover effects
+   ============================================ */
 #contact { background: var(--bg2); }
 .contact-grid {
   display: grid;
@@ -947,7 +1040,11 @@ section { padding: 6rem 4rem; position: relative; }
 }
 .form-btn:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(89,106,161,0.5); background: #3d4d6b; }
 
-/* FOOTER */
+/* ============================================
+   FOOTER - Site Conclusion
+   ============================================
+   Simple footer with copyright and year indicator
+   ============================================ */
 footer {
   padding: 2rem 4rem;
   border-top: 1px solid var(--border);
@@ -963,7 +1060,18 @@ footer p {
 }
 footer p span { color: var(--cyan); font-weight: 600; }
 
-/* ANIMATIONS */
+/* ============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================
+   Core animations used throughout the site:
+   - fadeUp: Slide up with fade in
+   - fadeIn: Simple fade in
+   - scrollPulse: Pulsing scroll indicator
+   - scrollGlitter: Sparkle particles
+   - floatParticle: Floating particle effects
+   - pulse: Pulsing glow effect
+   - rippleAnim: Ripple outward effect
+   ============================================ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -994,7 +1102,12 @@ footer p span { color: var(--cyan); font-weight: 600; }
 }
 @keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
 
-/* REVEAL */
+/* ============================================
+   REVEAL - Scroll-triggered Animations
+   ============================================
+   Used with Intersection Observer API
+   Elements animate in when scrolled into view
+   ============================================ */
 .reveal {
   opacity: 0;
   transform: translateY(28px) scale(0.97);
@@ -1002,7 +1115,12 @@ footer p span { color: var(--cyan); font-weight: 600; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
 
-/* PARTICLES */
+/* ============================================
+   PARTICLES - Ambient Effects
+   ============================================
+   Floating particle effects for visual interest
+   Used throughout hero and other sections
+   ============================================ */
 .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .particle {
   position: absolute;
@@ -1014,7 +1132,15 @@ footer p span { color: var(--cyan); font-weight: 600; }
   box-shadow: 0 0 8px var(--cyan), 0 0 15px rgba(89,106,161,0.6);
 }
 
-/* CURSOR */
+/* ============================================
+   CUSTOM CURSOR - Interactive Element
+   ============================================
+   Custom styled cursor with:
+   - Center dot (8px glowing circle)
+   - Outer ring (36px border circle)
+   - Enlarges on hover over interactive elements
+   - Glowing purple glow effects
+   ============================================ */
 #cur-dot {
   position: fixed; top: 0; left: 0; width: 8px; height: 8px;
   background: var(--cyan); border-radius: 50%;
@@ -1035,7 +1161,12 @@ footer p span { color: var(--cyan); font-weight: 600; }
 body.cur-hover #cur-dot { width: 12px; height: 12px; box-shadow: 0 0 14px var(--cyan), 0 0 28px rgba(89,106,161,.5); }
 body.cur-hover #cur-ring { width: 56px; height: 56px; border-color: rgba(89,106,161,.85); }
 
-/* SCROLL PROGRESS */
+/* ============================================
+   SCROLL PROGRESS BAR - Visual Scroll Indicator
+   ============================================
+   Thin horizontal bar at top that grows with scroll
+   Shows user's position on page
+   ============================================ */
 #scroll-bar {
   position: fixed; top: 0; left: 0; height: 2px; width: 0%;
   background: linear-gradient(90deg, var(--cyan2), var(--cyan));
@@ -1043,7 +1174,12 @@ body.cur-hover #cur-ring { width: 56px; height: 56px; border-color: rgba(89,106,
   transition: width .1s linear;
 }
 
-/* RIPPLE */
+/* ============================================
+   RIPPLE EFFECT - Click Animation
+   ============================================
+   Material Design inspired ripple on click
+   Creates expanding circle from click point
+   ============================================ */
 .ripple {
   position: absolute; border-radius: 50%;
   background: rgba(89,106,161,.25);
@@ -1051,7 +1187,15 @@ body.cur-hover #cur-ring { width: 56px; height: 56px; border-color: rgba(89,106,
   pointer-events: none;
 }
 
-/* MOBILE */
+/* ============================================
+   MOBILE RESPONSIVE - Mobile & Tablet Styles
+   ============================================
+   Breakpoint: 768px and below
+   Adjustments:
+   - Reduced padding and margins
+   - Hide desktop elements (social links, nav)
+   - Stack layout from 2 columns to 1
+   ============================================ */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
